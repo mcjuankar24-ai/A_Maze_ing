@@ -151,6 +151,7 @@ See `src/mazegen/README.md` for the full package documentation, including how to
 - [Python `typing` module documentation](https://docs.python.org/3/library/typing.html)
 - [Python packaging user guide (src layout, build backend)](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 - [flake8](https://flake8.pycqa.org/) and [mypy](https://mypy.readthedocs.io/) documentation
+
 **AI usage:** We wrote the initial implementation of every module ourselves, then used an AI assistant (Claude) as a code reviewer and
 debugging aid on the already-written code.
  
@@ -163,6 +164,6 @@ debugging aid on the already-written code.
  
 We split the project along the natural module boundaries early on: one of us owned config parsing and the maze/rendering data structures, the other owned the generation algorithms and the program entry point. This worked well because both halves only need to agree on the `Maze`/`Cell`/`Coord` interface, which we fixed early and rarely had to change.
  
-What worked well: splitting by module meant we could work in parallel without touching the same files. What we would improve: we under- estimated how many of the subject's correctness rules (connectivity, corridor width, PERFECT) only show up as bugs on specific maze sizes or seeds, so a chunk of the final week went into testing and fixing edge cases that a stricter test plan from the start would have caught sooner.
+What worked well: splitting by module meant we could work in parallel without touching the same files. What we would improve: we underestimated how many of the subject's correctness rules (connectivity, corridor width, PERFECT) only show up as bugs on specific maze sizes or seeds, so a chunk of the final days went into testing and fixing edge cases that a stricter test plan from the start would have caught sooner.
  
 Tools used: `flake8` and `mypy --strict` throughout development to catch issues early, and an AI assistant for the final review pass described above.

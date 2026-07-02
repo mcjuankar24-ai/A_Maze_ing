@@ -187,7 +187,7 @@ def load_config(file_path: str) -> MazeConfig:
         if width <= 0 or height <= 0:
             raise ValueError("WIDTH and HEIGHT must be bigger than 0")
         if width > 1000 or height > 1000:
-            raise ValueError("WIDTH and HEIGHT can't be higher than 150")
+            raise ValueError("WIDTH and HEIGHT can't be higher than 1000")
 
         entry_coord = get_coords(cfg_data['ENTRY'], width, height, 'ENTRY')
         exit_coord = get_coords(cfg_data['EXIT'], width, height, 'EXIT')

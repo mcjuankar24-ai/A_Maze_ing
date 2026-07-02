@@ -9,8 +9,8 @@ interactive terminal menu to regenerate, solve, or recolor the maze.
 import time
 import sys
 from typing import List
-from mazegen.parser import load_config, MazeConfig
-from mazegen.generator import MazeGenerator
+from mazegen import load_config, MazeConfig
+from mazegen import MazeGenerator
 
 
 def write_output_file(
@@ -103,7 +103,7 @@ def main() -> None:
     current_path_idx = 0
     current_pattern_idx = 0
 
-    from mazegen.parser import (
+    from mazegen import (
         WALL_PALETTE, PATH_PALETTE, PATTERN_PALETTE
     )
 
